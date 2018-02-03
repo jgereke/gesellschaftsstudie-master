@@ -1,0 +1,21 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+  Attività  4D
+{% endblock %}
+
+
+{% block content %}
+
+<p> Hai mandato {{dec_trustactivity}} punti.</p>
+
+<p>Questo ammontare viene triplicato. <b>Quindi, quanto riceve {{trust_name2}}?</b></p>
+ {% formfield player.dec_trustcheckact with label="" %}
+
+<p><b>E quanto pensi che {{trust_name2}} ti rimanderà indietro? </b></p>
+{% formfield player.dec_trustestimact with label="" %}
+
+    {% next_button %}
+
+{% endblock %}

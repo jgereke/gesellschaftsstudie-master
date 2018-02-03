@@ -1,0 +1,22 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+Sicherheit
+{% endblock %}
+
+{% block content %}
+
+<ul style="list-style-type:disc">
+<li>  Gibt es eigentlich hier in der unmittelbaren Nähe - ich meine so im Umkreis
+  von einem Kilometer - irgendeine Gegend, wo Sie nachts nicht alleine gehen möchten?
+  {% formfield player.fearalone with label="" %}</li>
+<li>  Für wie wahrscheinlich halten Sie es, dass Ihnen in den nächsten 12 Monaten
+  etwas gestohlen werden wird – egal ob zu Hause oder anderswo – ohne dass dabei Gewalt gegen Ihre Person angedroht oder angewendet wird? {% formfield player.feartheft with label="" %}</li>
+<li> Für wie wahrscheinlich halten Sie es, dass Sie in den nächsten 12 Monaten einer
+Körperverletzung zum Opfer fallen? {% formfield player.fearviolence with label="" %}</li>
+<p><br></p>
+
+  {% next_button %}
+
+{% endblock %}

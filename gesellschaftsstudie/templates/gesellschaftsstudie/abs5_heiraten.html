@@ -1,0 +1,24 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+Einheiraten in die Familie
+{% endblock %}
+
+{% block content %}
+
+<ul style="list-style-type:disc">
+ Und wie wäre es, wenn ein Angehöriger einer dieser Gruppen in Ihre Familie einheiraten würde?
+  Inwieweit wäre Ihnen das angenehm oder unangenehm? Der Skalenwert -3 bedeutet „wäre mir sehr unangenehm“,
+  <p></p>
+
+  <li> Polen {% formfield player.familypoles with label="" %}</li>
+  <li> Türken {% formfield player.familyturks with label="" %}</li>
+  <li> Syrer {% formfield player.familysyrian with label="" %}</li>
+  <li> Nigerianer {% formfield player.familynigerian with label="" %}</li>
+
+  <p><br></p>
+
+    {% next_button %}
+
+  {% endblock %}

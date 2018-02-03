@@ -1,0 +1,24 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+Wirtschaftliche Situation
+{% endblock %}
+
+{% block content %}
+
+<ul style="list-style-type:disc">
+<li>  Wenn Sie jetzt an Ihre eigene finanzielle Situation denken, ist Ihre persönliche finanzielle
+Situation sehr gut, gut, weniger gut oder schlecht?  {% formfield player.ownfinancial with label="" %}</li>
+<li> Im Vergleich dazu, wie andere in Deutschland leben: Glauben Sie, dass Sie persönlich
+Ihren gerechten Anteil erhalten, mehr als Ihren gerechten Anteil, etwas weniger oder
+sehr viel weniger?{% formfield player.fairshare with label="" %}</li>
+<li> Es macht mir Sorgen, durch die gesellschaftliche Entwicklung
+immer mehr auf die Verliererseite des Lebens zu geraten. {% formfield player.loserside with label="" %}</li>
+<li>Westdeutsche behandeln Ostdeutsche als Menschen zweiter Klasse. {% formfield player.secondclass with label="" %} </li>
+
+<p><br></p>
+
+  {% next_button %}
+
+{% endblock %}

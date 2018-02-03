@@ -1,0 +1,30 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Attività  1 - Istruzioni
+{% endblock %}
+
+{% block content %}
+
+<p> Svolgerai questa prima attività in coppia con altre persone che hanno precedentemente
+  partecipato alla nostra ricerca. L’accoppiamento è anonimo e non è quindi possibile
+  scoprire le vostre identità.
+ </p>
+
+<p> L’attività è la seguente. Tu ed un altro partecipante avete ricevuto un totale di 10 punti.
+  Tu hai il compito di decidere come distribuire questi punti tra te e l’altro partecipante.
+  Puoi decidere di tenere tutti i 10 punti per te, o di darli tutti all’altra persona,
+  o di tenerne una parte per te e darne il resto all’altro partecipante.
+  Ciò che tieni per te sarà tuo, e ciò che decidi di dare all’altro sarà suo.
+  L’attività è anonima e l’altro partecipante sarà informato solo della tua decisione,
+  ma non saprà nulla della tua identità.
+ </p>
+
+<p> Svolgerai la stessa attività due volte, con due persone diverse. Riceverai 10 punti ogni volta.</p>
+
+<p><br></p>
+
+    {% next_button %}
+
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block styles %}
+<style>
+.title{
+   display: inline-block;
+   height: 27px;
+   border:solid 1px lightgrey;
+   width: 40px;
+   text-align: left;
+}
+</style>
+{% endblock %}
+
+
+{% block title %}
+
+Attività  1B
+
+{% endblock %}
+
+{% block content %}
+
+<p> Ora ripeterai l’attività con un’altra persona. Per questa seconda sessione sei
+  in coppia con {{dg_name2}}, che vive a Milano, è {% if dg_gen2 == "He" %}
+  nato {% else %} nata {% endif %} {{dg_place2}} ed ha  {{dg_age2}} anni.
+    Per garantirne l’anonimato, non possiamo darti altre informazioni su di {% if dg_gen2 == "He" %}
+    lui. {% else %} lei. {% endif %} </p>
+
+<p> Decidi come dividere i 10 punti tra te e {{dg_name2}}. </p>
+
+<p> Voglio tenere  <input type='number' name="dec_dg2" id="dec_dg2" onkeyup="updateMoneyLeft(this.value)" style="width: 3em" required> punti
+  per me e dare <span id="deduction_span" class="title"><font color="black">&nbsp;</font></span> punti
+a {{dg_name2}}.</p>
+
+<p><br></p>
+
+{{ form.dec_dg2.errors }}
+
+    {% next_button %}
+{% endblock %}
+
+
+{% block scripts %}
+    <script>
+           var player_money=document.getElementById("dec_dg2").value;
+           function updateMoneyLeft(moneySpent){
+                if(moneySpent>10){
+                    document.getElementById("dec_dg2").value = 10;
+                    moneySpent=10;
+                }
+                document.getElementById("deduction_span").innerHTML = 10 - moneySpent;
+           }
+    </script>
+{% endblock %}

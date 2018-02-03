@@ -1,0 +1,42 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block styles %}
+
+    <style type="text/css">
+    table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    font-size: 110%;
+    }
+    </style>
+
+{% endblock %}
+
+{% block title %}
+
+Consenso Informato
+
+{% endblock %}
+
+{% block content %}
+
+<p> Questa ricerca è stata approvata dal comitato etico dell'Università Bocconi.</p>
+<p>Prima di procedere, l'Università richiede che ogni partecipante dia il proprio
+  esplicito consenso. </p>
+  <div style="margin-bottom: 2em;"> <span style="display: none;">.</span> </div>
+
+  <table class="table-condensed table-hover" style="width:50em; margin-top:0px; text-align: left;">
+  <tr><td> Dichiaro di aver ricevuto una chiara spiegazione delle procedure e di non aver ulteriori domande.
+  La mia partecipazione a questo studio è volontaria e sono consapevole di poter interrompere le attività
+  in ogni momento. Il mio consenso non rappresenta una rinuncia ai miei diritti e non solleva l'Università Bocconi
+  da alcuna responsabilità in caso di negligenza.
+  <p></p>
+  <p> <button class="btn btn-primary btn-large">Consento</button> </p>
+</td> </tr>
+</td></tr>
+</table>
+
+
+
+{% endblock %}

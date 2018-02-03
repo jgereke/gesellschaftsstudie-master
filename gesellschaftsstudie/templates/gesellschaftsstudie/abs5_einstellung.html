@@ -1,0 +1,22 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+Wie ist Ihre Einstellung dazu?
+{% endblock %}
+
+{% block content %}
+
+<ul style="list-style-type:disc">
+
+<li>  Durch die vielen Ausländer in Deutschland fühlt man sich zunehmend als Fremder
+im eigenen Land.{% formfield player.feelingforeign with label="" %}</li>
+<li> Die Regierenden kümmern sich zu viel um Flüchtlinge, und zu wenig um die einheimische Bevölkerung. {% formfield player.politicians with label="" %}</li>
+<li> Seit Beginn der Flüchtlingskrise ist unsere Gemeinde gespalten.{% formfield player.splitcommunity with label="" %} </li>
+<li> Wie viel Mitleid und Betroffenheit und Mitgefühl fühlen Sie, wenn Sie an Flüchtlinge denken? {% formfield player.sympathy with label="" %} </li>
+
+<p><br></p>
+
+  {% next_button %}
+
+{% endblock %}

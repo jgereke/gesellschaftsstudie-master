@@ -1,0 +1,21 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+Wahlentscheidung
+{% endblock %}
+
+{% block content %}
+
+<ul style="list-style-type:disc">
+<li> Bei der Bundestagswahl konnten Sie ja zwei Stimmen vergeben.
+  Die Erststimme für einen Kandidaten aus Ihrem Wahlkreis, <b>die Zweitstimme für eine Partei</b>.
+  <p><br></p>
+
+<b>   Welche Partei haben Sie bei der Bundestagswahl mit Ihrer Zweitstimme gewählt? </b>
+{% formfield player.party with label="" %} </li>
+
+    {% next_button %}
+<p><br></p>
+
+{% endblock %}

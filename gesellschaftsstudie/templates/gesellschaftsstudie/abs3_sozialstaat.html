@@ -1,0 +1,21 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+Sozialstaat
+{% endblock %}
+
+{% block content %}
+
+<ul style="list-style-type:disc">
+Inwieweit stimmen Sie den folgenden Aussagen zu:
+<p></p>
+
+<li> Die Ausländer kommen nur hierher, um unseren Sozialstaat auszunutzen.
+{% formfield player.rightwing1 with label="" %} </li>
+<li> Kindergeld soll nur an deutsche Familien ausgezahlt werden. {% formfield player.rightwing2 with label="" %} </li>
+<p><br></p>
+  {% next_button %}
+<p><br></p>
+
+{% endblock %}

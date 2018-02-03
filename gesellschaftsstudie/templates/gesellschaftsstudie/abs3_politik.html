@@ -1,0 +1,22 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+Politische Entscheidungen
+{% endblock %}
+
+{% block content %}
+
+<ul style="list-style-type:disc">
+   Inwieweit stimmen Sie den folgenden Aussagen zu:
+   <p></p>
+
+<li> Das Volk und nicht die Politiker sollten unsere wichtigsten politischen Entscheidungen treffen
+{% formfield player.populism1 with label="" %} </li>
+<li> In einer Demokratie ist es wichtig, Kompromisse zwischen unterschiedlichen Standpunkten einzugehen.
+   {% formfield player.populism2 with label="" %} </li>
+   <p><br></p>
+    {% next_button %}
+<p><br></p>
+
+{% endblock %}

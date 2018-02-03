@@ -1,0 +1,23 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+Flüchtlinge und Asylsuchende
+{% endblock %}
+
+{% block content %}
+
+<ul style="list-style-type:disc">
+Im Folgenden geht es um Flüchtlinge und Asylsuchende. <b>Sehen Sie es als Chance, dass mit den Flüchtlingen und Asylsuchenden:</b>
+
+<p></p>
+
+<li>. . . der Bevölkerungsrückgang ausgeglichen werden kann?  {% formfield player.asylchance1 with label="" %}</li>
+<li>. . . benötigte Arbeitskräfte für unsere Wirtschaft kommen?  {% formfield player.asylchance2 with label="" %}</li>
+<li>. . . auf dem Land die Infrastruktur erhalten werden kann? (z.B. Buslinien, Schulen und Kitas, Einkaufsmöglichkeiten)  {% formfield player.asylchance3 with label="" %}</li>
+<li>. . . unsere Gesellschaft kulturell vielfältiger wird? {% formfield player.asylchance4 with label="" %}</li>
+<p><br></p>
+
+  {% next_button %}
+
+{% endblock %}

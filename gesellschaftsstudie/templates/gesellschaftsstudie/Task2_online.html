@@ -1,0 +1,55 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+
+{% block styles %}
+
+    <style type="text/css">
+    table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    font-size: 100%;
+    text-align: center;
+    }
+    </style>
+
+{% endblock %}
+
+
+
+{% block title %}
+    Attività  2
+{% endblock %}
+
+
+{% block content %}
+
+<p> Ora immagina di sapere cosa Z ha deciso di fare. </p>
+
+<p>In particolare, immagina che Z abbia deciso di <b> Partecipare</b>. Tu cosa decidi di fare?</p>
+{% formfield player.dec_svoc with label=""%}
+<p><br></p>
+ <table class="table-condensed table-hover table-hover" style="width:400px; margin-top:0px; text-align: center;">
+     <tr><td><b> Tu </b></td> <td><b> Z</b> </td> <td> <b>Tu ricevi </b></td> <td><b>Z riceve</b></td> </tr>
+     <tr><td> Partecipare </td> <td> Partecipare </td> <td> {{Constants.cc }} punti </td> <td> {{Constants.cc }} punti </td></tr>
+     <tr><td> Non Partecipare </td> <td> Partecipare </td> <td> {{Constants.dc }} punti </td> <td> {{Constants.cd }} punto </td></tr>
+</table>
+
+<hr>
+
+<p> Ora, immagina che Z abbia deciso di <b>Non partecipare</b>. Tu cosa decidi di fare?</p>
+{% formfield player.dec_svonc with label=""%}
+<p><br></p>
+
+ <table class="table-condensed table-hover" style="width:400px; margin-top:0px; text-align: center;">
+     <tr><td><b> Tu </b></td> <td><b> Z</b> </td> <td> <b>Tu ricevi </b></td> <td><b>Z riceve</b></td> </tr>
+     <tr><td> Partecipare </td> <td> Non Partecipare </td> <td> {{Constants.cd }} punto </td> <td> {{Constants.dc }} punti </td></tr>
+     <tr><td> Non Partecipare </td> <td> Non Partecipare </td> <td> {{Constants.dd }} punti </td> <td> {{Constants.dd }} punti </td></tr>
+</table>
+
+
+<p><br></p>
+
+    {% next_button %}
+
+{% endblock %}

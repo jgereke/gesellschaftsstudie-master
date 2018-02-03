@@ -1,0 +1,83 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Attività  4A
+{% endblock %}
+
+
+{% block content %}
+
+<p> Sei stato accoppiato con {{trust_name1}}, che partecipa nel ruolo di Z. {{trust_name1}} vive a Milano,
+è {% if trust_gen1 == "He" %} nato {% else %} nata {% endif %} {{trust_place1}},
+ha  {{trust_age1}} anni, e lavora {{trust_job}}.</p>
+
+<p>Per garantirne l’anonimato, non possiamo darti altre informazioni su di {% if trust_gen1 == "He" %}
+  lui. {% else %} lei. {% endif %} </p>
+
+<p>Hai ricevuto 10 punti. Ricorda: i punti che dai a {{trust_name1}} saranno triplicati
+  e poi {% if trust_gen1 == "He" %} lui {% else %} lei {% endif %} potrà decidere quanti euro rimandare indietro.
+</p>
+
+<p>Quanti punti vuoi trasferire a {{trust_name1}} ?</p>
+
+<input type="radio" name="dec_trustjob" value="0">
+<label for="0">0 &emsp; </label>
+<input type="radio" name="dec_trustjob" value="1">
+<label for="1">1 &emsp; </label>
+<input type="radio" name="dec_trustjob" value="2"/>
+<label for="2">2 &emsp; </label>
+<input type="radio" name="dec_trustjob" value="3"/>
+<label for="3">3 &emsp; </label>
+<input type="radio" name="dec_trustjob" value="4">
+<label for="4">4 &emsp; </label>
+<input type="radio" name="dec_trustjob" value="5"/>
+<label for="5">5 &emsp; </label>
+<input type="radio" name="dec_trustjob" value="6"/>
+<label for="6">6 &emsp; </label>
+<input type="radio" name="dec_trustjob" value="7">
+<label for="7">7 &emsp; </label>
+<input type="radio" name="dec_trustjob" value="8"/>
+<label for="8">8 &emsp; </label>
+<input type="radio" name="dec_trustjob" value="9"/>
+<label for="9">9 &emsp; </label>
+<input type="radio" name="dec_trustjob" value="10">
+<label for="10">10</label>
+
+{{ form.dec_trustjob.errors }}
+
+<p><br></p>
+<details style="font-size: 100%">
+    <summary style="outline:none"> <b>Clicca qui se vuoi leggere nuovamente le istruzioni.</b></summary>
+    <p style="font-size: 100%">Svolgerai questa attività in coppia con un’altra persona che chiameremo Z.</p>
+    <p style="font-size: 100%">All’inizio dell’attività tu ricevi 10 punti, e Z non ha nulla. Tu devi decidere
+      se e quanti dei tuoi punti vuoi trasferire a Z. Puoi dare a Z qualsiasi ammontare da 0 punti a 10 punti.</p>
+    <p style="font-size: 100%">Noi triplicheremo l’ammontare che hai deciso di dare a Z. Per esempio, se tu dai 2 punti,
+      Z ne riceve 6, se tu ne dai 4 punti, Z ne riceve 12, e se dai 8 punti, Z ne riceve 24.</p>
+    <p style="font-size: 100%">A questo punto Z deve decidere quanto rimandare a te. L’ammontare che Z ti
+      manda non verrà triplicato e quindi tu riceverai esattamente quanto Z ha deciso di inviarti.
+      Se ti dà 1 punto riceverai 1 punto, se ti da 10 punti riceverai 10 punti...</p>
+    <p style="font-size: 100%"><span style="text-decoration: underline;">Guadagno: </span> Il tuo guadagno totale
+    è l’ammontare che hai tenuto per te e quanto Z ti ha rimandato.</p>
+    <p style="font-size: 100%"> Z invece guadagnerà il triplo di quanto gli hai mandato, meno quello che ti ha mandato indietro.</p>
+    <p style="font-size: 100%"> Z ha partecipato nei giorni scorsi a questa attività ed abbiamo registrato le sue decisioni.
+        Manderemo a Z i punti da lui/lei guadagnati, dopo che tu avrai deciso.</p>
+</details>
+<p><br></p>
+
+    {% next_button %}
+
+{% endblock %}
+
+{% block scripts %}
+
+    <script>
+
+function setScore() {
+    var score = 0;
+    $.each($('input:checked'), function (i,input) { score += Number( input.value);});
+    $('#score').text(score);
+}
+    </script>
+
+{% endblock %}

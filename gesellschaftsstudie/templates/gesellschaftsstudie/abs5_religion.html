@@ -1,0 +1,16 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+Religionszugehörigkeit
+{% endblock %}
+
+{% block content %}
+
+<ul style="list-style-type:disc">
+<li> Welcher Konfession oder Glaubensgemeinschaft gehören Sie an? {% formfield player.religion with label="" %}</li>
+<p><br></p>
+
+  {% next_button %}
+
+{% endblock %}

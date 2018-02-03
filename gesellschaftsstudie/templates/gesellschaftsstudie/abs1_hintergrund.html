@@ -1,0 +1,28 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+Persönliche Angaben
+{% endblock %}
+
+{% block content %}
+
+<ul style="list-style-type:disc">
+<li> Geschlecht: {% formfield player.gender with label="" %} </li>
+
+<li> Sagen Sie mir bitte, wie alt Sie derzeit sind?
+ {% formfield player.age with label="" %} </li>
+
+<li> Welchen Familienstand haben Sie? {% formfield player.married with label="" %} </li>
+
+<li> Haben Sie Kinder? {% formfield player.children with label="" %}</li>
+
+<li> Wohnen AUSSER IHNEN noch weitere Personen in diesem Haushalt? {% formfield player.household with label="" %}</li>
+
+</ul>
+
+<p><br></p>
+    {% next_button %}
+<p><br></p>
+
+{% endblock %}

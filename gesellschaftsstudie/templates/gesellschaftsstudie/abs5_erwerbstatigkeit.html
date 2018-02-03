@@ -1,0 +1,18 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+Erwerbstätigkeit
+{% endblock %}
+
+{% block content %}
+
+<ul style="list-style-type:disc">
+<li> Sind Sie in Rente, in Pension oder im Vorruhestand, in Mutterschutz/Elternzeit,
+  arbeitslos oder aus anderen Gründen nicht berufstätig?
+{% formfield player.notemployed with label="" %}</li>
+<p><br></p>
+
+  {% next_button %}
+
+{% endblock %}

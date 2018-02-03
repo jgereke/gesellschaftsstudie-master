@@ -1,0 +1,25 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+Ihre Meinung
+{% endblock %}
+
+{% block content %}
+
+<ul style="list-style-type:disc">
+ Auf einer Skala von 1-7 (1= stimme überhaupt nicht zu; 7= stimme voll und ganz zu)
+ inwieweit stimmen Sie den folgenden Aussagen zu:
+ <p></p>
+
+ Die in Deutschland lebenden Ausländer ... <p></p>
+ <li> ...machen die Arbeit, die die Deutschen nicht erledigen wollen.
+  {% formfield player.immposi1 with label="" %}</li>
+<li>  ...tragen zur Sicherung der Renten bei.
+  {% formfield player.immposi2 with label="" %}</li>
+  <p><br></p>
+
+    {% next_button %}
+  <p><br></p>
+
+{% endblock %}

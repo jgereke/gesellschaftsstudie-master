@@ -1,0 +1,21 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+Online Petition
+{% endblock %}
+
+{% block content %}
+
+<ul style="list-style-type:disc">
+Möchten Sie die folgende Online Petition an den Deutschen Bundestag unterscheiben?
+<p></p>
+
+<li> Wir sind gegen eine doppelte Staatsbürgerschaft von Türken und anderen Ausländern
+und fordern den Bundestag auf, die Einführung der doppelten Staatsbürgerschaft abzulehnen.
+{% formfield player.petition with label="" %} </li>
+<p><br></p>
+    {% next_button %}
+<p><br></p>
+
+{% endblock %}

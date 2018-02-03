@@ -1,0 +1,18 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+Ausländeranteil
+{% endblock %}
+
+{% block content %}
+
+<ul style="list-style-type:disc">
+<li> Was meinen Sie, wieviel Prozent beträgt der Ausländeranteil in Ihrem Bundesland? {% formfield player.percentageforeignbula with label="" %}</li>
+<li> Wie viele Ausländer bzw. Ausländische Familien wohnen hier in Ihrem Wohnort?  {% formfield player.percentageforeignvillage with label="" %}</li>
+<li> Wie viele Ihrer Bekannten haben ausländische Wurzeln? {% formfield player.aquaintances with label="" %}</li>
+<p><br></p>
+
+  {% next_button %}
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+Unterstützung von Flüchtlingen
+{% endblock %}
+
+{% block content %}
+
+<ul style="list-style-type:disc">
+Haben Sie während der vergangenen drei Jahre:
+<p></p>
+
+<li>  . . . Flüchtlinge mit Geld- und/oder Sachspenden unterstützt? {% formfield player.supportrefugees1 with label="" %} </li>
+<li>  . . . vor Ort mit Flüchtlingen gearbeitet
+  (z.B. Hilfe bei Behördengängen oder Sprachförderung)? {% formfield player.supportrefugees2 with label="" %}</li>
+
+  <p><br></p>
+
+    {% next_button %}
+
+  {% endblock %}

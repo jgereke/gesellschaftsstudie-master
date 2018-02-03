@@ -1,0 +1,35 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Attività  4 - Istruzioni
+{% endblock %}
+
+
+{% block content %}
+
+<p>Svolgerai questa attività in coppia con un’altra persona che chiameremo Z.
+  L’accoppiamento è anonimo e non è quindi possibile scoprire le vostre identità.
+</p>
+
+<p>All’inizio dell’attività tu ricevi 10 punti e Z non ha nulla. Tu devi decidere
+  se e quanti dei tuoi punti vuoi trasferire a Z. Puoi dare a Z qualsiasi ammontare dà 0 punti a 10 punti.
+</p>
+
+<p>Noi triplicheremo l’ammontare che hai deciso di dare a Z. Per esempio, se tu dai 2 punti,
+  Z ne riceve 6, se tu dai 4 punti, Z ne riceve 12, e se dai 8 punti, Z ne riceve 24.
+</p>
+
+<p>A questo punto Z deve decidere quanto rimandare a te. L’ammontare che Z ti
+  manda non verrà triplicato e quindi tu riceverai esattamente quanto Z ha deciso di inviarti.
+  Se ti dà 1 punto riceverai 1 punto, se ti da 10 punti riceverai 10 punti...</p>
+
+<p><span style="text-decoration: underline;">Guadagno: </span> il tuo guadagno totale
+è l’ammontare che hai tenuto per te e quanto Z ti ha rimandato.</p>
+
+<p> Z invece guadagnerà il triplo di quanto gli hai mandato, meno quello che ti ha mandato indietro.</p>
+<p> Z ha partecipato nei giorni scorsi a questa attività ed abbiamo registrato le sue decisioni.
+    Manderemo a Z i soldi da lui/lei guadagnati, dopo che tu avrai deciso. </p>
+    {% next_button %}
+
+{% endblock %}

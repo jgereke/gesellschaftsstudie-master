@@ -1,0 +1,21 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+Flüchtlinge und Asylbewerber
+{% endblock %}
+
+{% block content %}
+
+<ul style="list-style-type:disc">
+<li> Haben Sie während der vergangenen drei Jahre an Demonstrationen gegen eine
+Flüchtlingsunterbringung oder allgemein gegen Flüchtlinge teilgenommen? {% formfield player.againstrefugees with label="" %}</li>
+
+<li> Haben Sie Verständnis dafür, wenn Leute gegen die Unterbringung von Asylbewerbern demonstrieren? {% formfield player.understandcontraref with label="" %} </li>
+
+<li> Verstehen Sie Menschen, die Flüchtlinge unterstützen? {% formfield player.understandproref with label="" %} </li>
+<p><br></p>
+
+  {% next_button %}
+
+{% endblock %}

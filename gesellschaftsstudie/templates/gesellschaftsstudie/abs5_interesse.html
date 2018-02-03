@@ -1,0 +1,22 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+Interesse an Politik
+{% endblock %}
+
+{% block content %}
+
+<ul style="list-style-type:disc">
+<li>Wie stark interessieren Sie sich für Politik? 
+ {% formfield player.politics with label="" %}</li>
+
+<li>Viele Leute verwenden die Begriffe "links" und "rechts", wenn es darum geht, unterschiedliche
+politische Einstellungen zu kennzeichnen. Wir haben hier einen Maßstab, der von links nach rechts verläuft.
+Wenn Sie an Ihre eigenen politischen Ansichten denken, wo würden Sie diese Ansichten auf
+dieser Skala einstufen? {% formfield player.rightleft with label="" %}</li>
+<p><br></p>
+
+  {% next_button %}
+
+{% endblock %}

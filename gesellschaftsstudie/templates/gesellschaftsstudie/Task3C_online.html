@@ -1,0 +1,46 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Attività  3C
+{% endblock %}
+
+{% block styles %}
+
+    <style type="text/css">
+    table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    font-size: 100%;
+    text-align: center;
+    }
+    </style>
+
+{% endblock %}
+
+{% block content %}
+
+<p> Infine, {{pd_name1}} potrebbe partecipare ancora ad uno studio come questo in coppia con altre persone.
+  Tu puoi aiutare futuri partecipanti a questa ricerca dicendo loro come {{pd_name1}} si è {% if pd_gen1 == "He" %}
+  comportato {% else %} comportata {% endif %} con te.
+
+  Al costo di {{Constants.pd_infosell}} puoi decidere di far sapere la decisione di {{pd_name1}} a chi
+sarà in coppia con {% if pd_gen1 == "He" %} lui {% else %} lei {% endif %} in futuro.  </p>
+
+<p>Vuoi spendere {{Constants.pd_infosell}} per comunicare la decisione di {{pd_name1}} a futuri partecipanti?</p>
+{% formfield player.dec_infosell with label=""%}
+
+
+<table class="table-condensed table-hover" style="width:400px; margin-top:0px; text-align: center;">
+  <tr><td><b> Tu </b></td> <td><b> {{pd_name1}} </b> </td> <td> <b>Tu ricevi </b></td> <td><b>{{pd_name1}} riceve</b></td> </tr>
+  <tr><td> Partecipare </td> <td> Partecipare </td> <td> {{Constants.cc }} punti </td> <td> {{Constants.cc }} punti </td></tr>
+  <tr><td> Partecipare </td> <td> Non Partecipare </td> <td> {{Constants.cd }} punto </td> <td> {{Constants.dc }} punti </td></tr>
+  <tr><td> Non Partecipare </td> <td> Partecipare </td> <td> {{Constants.dc }} punti </td> <td> {{Constants.cd }} punto </td></tr>
+  <tr><td> Non Partecipare </td> <td> Non Partecipare </td> <td> {{Constants.dd }} punti </td> <td> {{Constants.dd }} punti </td></tr>
+</table>
+
+
+<p><br></p>
+
+    {% next_button %}
+{% endblock %}

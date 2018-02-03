@@ -1,0 +1,53 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+Wohnort
+{% endblock %}
+
+{% block content %}
+
+<ul style="list-style-type:disc">
+<li> In welchem Bundesland wohnen Sie?  {% formfield player.bundesland with label="" %} </li>
+
+<li> Wie heißt ihr Wohnort? {% formfield player.village with label="" %} </li>
+
+<li> Wie lange leben Sie schon in Ihrer derzeitigen Wohnung/Haus? {% formfield player.residencetime with label="" %} </li>
+
+<li> Wenn Sie an die letzten drei Jahre zurückdenken (d.h. 2015, 2016, und 2017):
+  wie viele Nachbarn, die bereits vor dieser Zeit hier gelebt haben, haben Ihre direkte Nachbarschaft verlassen?
+ {% formfield player.neighborsmovingout with label="" %}
+  </li>  <br>
+
+ <li> Und wie viele Nachbarn sind in diesem Zeitraum neu hergezogen? {% formfield player.neighborsmovingin with label="" %}  </li>
+
+</ul>
+
+<p><br></p>
+    {% next_button %}
+<p><br></p>
+
+{% endblock %}
+
+{% block scripts %}
+
+<script>
+
+$(function() {
+  if($( "#id_born" ).val()==2){
+    $( "#id_region" ).show();
+  }else{
+    $( "#id_region" ).hide();
+  }
+  $( "#id_born" ).change(function() {
+      if($( "#id_born" ).val()==2){
+        $( "#id_region" ).show();
+      }else{
+        $( "#id_region" ).hide();
+      }
+  });
+});
+
+</script>
+
+{% endblock %}

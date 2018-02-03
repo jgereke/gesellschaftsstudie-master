@@ -1,0 +1,22 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+Muslime in Deutschland
+{% endblock %}
+
+{% block content %}
+
+<ul style="list-style-type:disc">
+Im Folgenden geht es um Muslime. Was denken Sie zu den folgenden Punkten?
+<p></p>
+
+<li> Die meisten in Deutschland lebenden Muslime akzeptieren unsere Werte, so wie sie im
+Grundgesetz festgeschrieben sind. {% formfield player.muslim1 with label="" %}</li>
+<li> Die vielen Moscheen in Deutschland zeigen, dass der Islam auch hier seine Macht vergrößern {% formfield player.muslim2 with label="" %}</li>
+
+<p><br></p>
+
+  {% next_button %}
+
+{% endblock %}

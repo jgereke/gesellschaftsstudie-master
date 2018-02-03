@@ -1,0 +1,83 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block styles %}
+
+<style type="text/css">
+table, th, td {
+border: 1px solid black;
+border-collapse: collapse;
+font-size: 100%;
+text-align: center;
+}
+
+  .button {
+    background: #3498db;
+    background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+    background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+    background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+    background-image: -o-linear-gradient(top, #3498db, #2980b9);
+    background-image: linear-gradient(to bottom, #3498db, #2980b9);
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: 28px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+  }
+
+  .button:hover {
+    background: #3cb0fd;
+    background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+    text-decoration: none;
+  }
+
+</style>
+
+{% endblock %}
+
+
+{% block title %}
+ Riassunto attività
+{% endblock %}
+
+
+{% block content %}
+
+<p></p>
+<p></p>
+
+<p> Le tue decisioni e potenziali guadagni nelle attività sono le seguenti: </p>
+ <table class="table-condensed table-hover" style=" margin-top:0px; text-align: left;">
+     <tr><td><b> Attività </b></td> <td><b> La tua decisione </b> </td> <td> <b> Il tuo guadagno sarebbe </b></td> <td><b>Numero di riferimento per il tuo guadagno</b></td> </tr>
+     <tr><td> 1A </td> <td> Hai tenuto {{ player.dec_dg1 }} punti.</td> <td> {{ player.po_dg1 }} </td> <td><b> 1 </b></td></tr>
+     <tr><td> 1B </td> <td> Hai tenuto {{ player.dec_dg2 }} punti.</td> <td> {{ player.po_dg2}} </td> <td><b> 2 </b></td></tr>
+     <tr><td> 2  </td> <td> Hai scelto di {{ player.dec_svoc }}.</td> <td> {{ player.po_svoc }} </td> <td> <b>3</b> </td></tr>
+     <tr><td> 3A </td> <td> Hai scelto di {{ player.dec_svonc }}.</td> <td> {{ player.po_svonc }} </td> <td><b> 4 </b></td></tr>
+     <tr><td> 3B  </td> <td> Hai risposto che l'altro partecipante avrebbe deciso di {{ player.dec_pdguess }}.</td> <td> {{ player.po_pdguess }} </td> <td> <b>5 </b></td></tr>
+     <tr><td> 3C </td> <td> Hai scelto di {{ player.dec_pd1 }}.</td> <td> {{ player.po_pd1 }} </td> <td><b> 6 </b></td></tr>
+     <tr><td> 3D </td> <td> Hai scelto di {{ player.dec_pd2 }}.</td> <td> {{ player.po_pd2 }} </td> <td><b> 7 </b></td></tr>
+     <tr><td> 4A </td> <td> Hai inviato {{ player.dec_trustjob }} punti.</td> <td> {{ player.po_trustjob }} </td> <td><b> 8 </b></td></tr>
+     <tr><td> 4B  </td> <td> Hai inviato {{ player.dec_trustactivity }} punti.</td> <td> {{ player.po_trustact }} </td> <td><b> 9</b> </td></tr>
+     <tr><td> 5   </td> <td> Hai scelto {{ player.dec_threat }}.</td> <td> {{ player.po_threat }} </td> <td><b> 10</b> </td></tr>
+</table>
+
+<p></p><p></p>
+
+<p> <b><u> Il tuo guadagno:</u> </br>
+  Hai scelto numero {{ player.dec_picknumber }} nelle schermata precedente.</br>
+ Sarai pagato per l'attività che corrisponde al numero di riferimento per il tuo guadagno
+nella tabella sopra.</b><br> Se il tuo guadagno nell'attività è meno di 8 punti, riceverai comunque 8 punti.</p>
+<p></p>
+Grazie per aver partecipato a questa ricerca! </br> Premere il pulsante sottostante per terminare.
+<p> <br></p>
+ <a href="http://norstatsurveys.com/wix/p1860712438.aspx?status=complete" class="button">Invia i risultati e completa il sondaggio</a>
+<p> <br></p>
+<p> <br></p>
+{% endblock %}

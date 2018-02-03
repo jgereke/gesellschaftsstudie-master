@@ -1,0 +1,36 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block styles %}
+
+    <style type="text/css">
+    table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    font-size: 100%;
+    text-align: center;
+    }
+    </style>
+
+{% endblock %}
+
+{% block title %}
+    Scegli un numero
+{% endblock %}
+
+{% block content %}
+
+
+<p> Prima di vedere i risultati delle attività,
+  seleziona un numero compreso tra 1 e 10.
+</p>
+
+{% formfield player.dec_picknumber with label=""%}
+
+<p><br></p>
+
+    {% next_button %}
+
+
+
+{% endblock %}

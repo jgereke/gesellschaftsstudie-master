@@ -1,0 +1,24 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+Nachbarn
+{% endblock %}
+
+{% block content %}
+
+<ul style="list-style-type:disc">
+Wie angenehm oder unangenehm wären Ihnen Angehörige dieser Gruppen als
+Nachbarn? Der Skalenwert -3 bedeutet „wäre mir sehr unangenehm“,
+<p></p>
+
+<li> Polen {% formfield player.neighborpoles with label="" %}</li>
+<li> Türken {% formfield player.neighborturks with label="" %}</li>
+<li> Syrer {% formfield player.neighborsyrian with label="" %}</li>
+<li> Nigerianer {% formfield player.neighbornigerian with label="" %}</li>
+
+<p><br></p>
+
+  {% next_button %}
+
+{% endblock %}

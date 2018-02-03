@@ -1,0 +1,20 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+Hypothetische Stimmabgabe
+{% endblock %}
+
+{% block content %}
+
+<ul style="list-style-type:disc">
+<li> Bei der Bundestagswahl konnten Sie ja zwei Stimmen vergeben.
+    Die Erststimme für einen Kandidaten aus Ihrem Wahlkreis, die Zweitstimme für eine Partei.
+    <p><br></p>
+  <b> Welche Partei hätten Sie bei der Bundestagswahl mit Ihrer Zweitstimme gewählt, wenn Sie sich entschieden hätten zur Wahl zu gehen?  </b>
+{% formfield player.partyif with label="" %} </li>
+
+    {% next_button %}
+<p><br></p>
+
+{% endblock %}

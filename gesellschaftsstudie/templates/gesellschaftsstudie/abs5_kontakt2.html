@@ -1,0 +1,17 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+Kontakt zu Flüchtlingen oder Asylsuchenden
+{% endblock %}
+
+{% block content %}
+
+<ul style="list-style-type:disc">
+<li> Wenn ja, wo haben Sie persönlichen Kontakt zu Flüchtlingen oder Asylsuchenden
+  gehabt? {% formfield player.contactrefugeesplace with label="" %}</li>
+  <p><br></p>
+
+    {% next_button %}
+
+  {% endblock %}

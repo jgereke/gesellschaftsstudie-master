@@ -1,0 +1,21 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+Migrationshintergrund
+{% endblock %}
+
+{% block content %}
+
+<ul style="list-style-type:disc">
+<li> Sind Sie selbst Migrant(in) oder haben Sie in der direkten Verwandtschaft Migranten? </li>
+{% formfield player.selfmigrant with label="" %}
+
+<li> Sind Sie selbst Vertriebene(r) oder haben Sie in der direkten Verwandtschaft
+Migranten oder Vertriebene? </li>
+{% formfield player.selfvertrieben with label="" %}
+ <p><br></p>
+
+   {% next_button %}
+
+ {% endblock %}

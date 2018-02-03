@@ -1,0 +1,24 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+Vertrauen
+{% endblock %}
+
+{% block content %}
+
+<ul style="list-style-type:disc">
+<li> Wenn Sie an Ihrem Wohnort Ihr Geldbeutel mit Ihrer Adresse und Geld darin verlieren,
+  wie wahrscheinlich wäre es, dass Sie es samt Inhalt zurückerhalten?
+ {% formfield player.wallet with label="" %}</li>
+
+<li> Wie sehr vertrauen Sie den Menschen in Ihrer Nachbarschaft? {% formfield player.trustneighbor with label="" %}</li>
+
+<li> Und jetzt möchten wir wissen, wie stark Sie sich mit Ihrer Gemeinde (Stadt) und ihren Bürgern verbunden fühlen.
+Sind Sie Ihrer Gemeinde und ihren Bürgern gefühlsmäßig stark verbunden, ziemlich verbunden, wenig verbunden oder gar nicht verbunden? {% formfield player.communitybelonging with label="" %}</li>
+
+<p><br></p>
+
+  {% next_button %}
+
+{% endblock %}

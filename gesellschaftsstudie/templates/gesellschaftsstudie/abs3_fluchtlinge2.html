@@ -1,0 +1,23 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+Flüchtlinge und Asylsuchende
+{% endblock %}
+
+{% block content %}
+
+<ul style="list-style-type:disc">
+Im Folgenden geht es weiterhin um Flüchtlinge und Asylsuchende. Inwieweit stimmen Sie den folden Aussagen zu:
+<p></p>
+
+<li>Die meisten Asylbewerber befürchten nicht wirklich, in ihrem Heimatland verfolgt zu werden {% formfield player.asyl1 with label="" %}</li>
+<li>Asylsuchende, deren Antrag auf Asyl abgelehnt wurde, sollten ohne Ausnahme abgeschoben werden. {% formfield player.asyl2 with label="" %}</li>
+<li>Die Behörden sollten mehr tun, um Ausländer und Flüchtlinge vor fremdenfeindlichen Übergriffen zu schützen.{% formfield player.asyl3 with label="" %}</li>
+<li>Haben Sie die Sorge, dass wegen der Flüchtlinge und Asylsuchenden die Konkurrenz auf dem Arbeitsmarkt zunehmen wird? {% formfield player.asyl4 with label="" %}</li>
+
+<p><br></p>
+
+  {% next_button %}
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Attività  4B
+{% endblock %}
+
+
+{% block content %}
+
+<p>Hai mandato {{dec_trustjob}} punti.</p>
+
+<p>Questo ammontare viene triplicato. <b>Quindi, quanto riceve {{trust_name1}}?</b></p>
+ {% formfield player.dec_trustcheckjob with label="" %}
+
+<p><b>E quanto pensi che {{trust_name1}} ti rimanderà indietro? </b></p>
+{% formfield player.dec_trustestimjob with label="" %}
+
+
+
+    {% next_button %}
+
+{% endblock %}

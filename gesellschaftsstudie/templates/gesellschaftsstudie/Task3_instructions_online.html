@@ -1,0 +1,69 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Attività 3 - Istruzioni
+{% endblock %}
+
+{% block styles %}
+
+    <style type="text/css">
+    table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    font-size: 100%;
+    text-align: center;
+    }
+    </style>
+
+{% endblock %}
+
+
+{% block content %}
+
+<p> Anche in questo caso svolgerai questa attività in coppia con un’altra persona che chiameremo Z.
+  In questa attività puoi decidere se vuoi partecipare ad un progetto comune con Z. Sia tu che l’altra persona potete
+decidere se partecipare o no. Il tuo guadagno dipende sia dalla tua decisione sia
+dalla decisione dell’altra persona. </p>
+
+<p>
+  <li> Se entrambi decidete di partecipare, entrambi ricevete {{Constants.cc }} punti.</li>
+  <li> Se tu partecipi, e Z non partecipa, tu ricevi {{Constants.cd }} punti, mentre Z riceve {{Constants.dc}} punti. </li>
+  <li> Se tu non partecipi, e Z partecipa, tu ricevi {{Constants.dc }} punti,
+      mentre Z riceve {{Constants.cd }} punti. </li>
+  <li>Se entrambi decidete di non partecipare, entrambi ricevete {{Constants.dd }} punti.</li>
+</p>
+
+<p> queste opzioni sono riassunte nella tabella: </p>
+
+<p><br></p>
+ <table class="table-condensed table-hover" style="width:400px; margin-top:0px; text-align: center;">
+     <tr><td><b> Tu </b></td> <td><b> Z</b> </td> <td> <b>Tu ricevi </b></td> <td><b>Z riceve</b></td> </tr>
+     <tr><td> Partecipare </td> <td> Partecipare </td> <td> {{Constants.cc }} punti </td> <td> {{Constants.cc }} punti </td></tr>
+     <tr><td> Partecipare </td> <td> Non Partecipare </td> <td> {{Constants.cd }} punto </td> <td> {{Constants.dc }} punti </td></tr>
+     <tr><td> Non Partecipare </td> <td> Partecipare </td> <td> {{Constants.dc }} punti </td> <td> {{Constants.cd }} punto </td></tr>
+     <tr><td> Non Partecipare </td> <td> Non Partecipare </td> <td> {{Constants.dd }} punti </td> <td> {{Constants.dd }} punti </td></tr>
+
+</table>
+<p><br></p>
+
+<details style="font-size: 100%">
+    <summary style="outline:none"> <b>Clicca qui se vuoi leggere nuovamente le istruzioni.</b></summary>
+    In questa attività sei in coppia con un’altra persona che chiameremo Z. Puoi decidere
+    se vuoi partecipare ad un progetto comune con Z. Sia tu che l’altra persona potete
+    decidere se partecipare o no. Il tuo guadagno dipende sia dalla tua decisione sia
+    dalla decisione dell’altra persona.
+    <ul style="font-size: 100%">
+      <li> Se entrambi decidete di partecipare, entrambi ricevete {{Constants.cc }} punti.</li>
+      <li> Se tu partecipi, e Z non partecipa, tu ricevi {{Constants.cd }} punti
+     , mentre Z riceve {{Constants.dc}} punti. </li>
+      <li> Se tu non partecipi, e Z partecipa, tu ricevi {{Constants.dc }} punti,
+          mentre Z riceve {{Constants.cd }} punti. </li>
+      <li>Se entrambi decidete di non partecipare, entrambi ricevete {{Constants.dd }} punti.</li>
+</ul>
+</details>
+<p><br></p>
+
+    {% next_button %}
+
+{% endblock %}
